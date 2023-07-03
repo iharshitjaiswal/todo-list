@@ -11,6 +11,9 @@ filteroption.addEventListener('change', filterTodo)
 
 function addTodo(event) {
     event.preventDefault();
+    if(todoinput.value === ''){
+        document.getElementsByClassName("todo").style.display="none";
+    }else{
     const todoDiv = document.createElement("div")
     todoDiv.classList.add("todo");
 
@@ -34,6 +37,7 @@ function addTodo(event) {
     todoDiv.appendChild(trashButton);
 
     todolist.appendChild(todoDiv);
+    }
 }
 
 function deleteCheck(e) {
@@ -84,6 +88,7 @@ function savelocalTodos(todo) {
     let todos;
     if (localStorage.getItem('todos') === null) {
         todos = [];
+        document.getElementsByClassName("todo").style.display="none";
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
