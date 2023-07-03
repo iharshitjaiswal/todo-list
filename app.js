@@ -88,7 +88,6 @@ function savelocalTodos(todo) {
     let todos;
     if (localStorage.getItem('todos') === null) {
         todos = [];
-        document.getElementsByClassName("todo").style.display="none";
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
@@ -100,6 +99,7 @@ function getTodos() {
     let todos;
     if (localStorage.getItem('todos') === null) {
         todos = [];
+        document.getElementsByClassName("todo").style.display="none";
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
